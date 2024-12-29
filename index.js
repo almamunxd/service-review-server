@@ -159,6 +159,16 @@ async function run() {
             }
         });
 
+        // Add a review for a service
+        app.post('/reviews', async (req, res) => {
+            const review = req.body;
+            try {
+                const result = await reviewsCollection.insertOne(review);
+                res.send({ success: true, message: 'Review added successfully', data: result });
+            } catch (error) {
+                res.status(500).send({ success: false, message: 'Failed to add review', error });
+            }
+        });
 
 
 
