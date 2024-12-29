@@ -149,9 +149,9 @@ async function run() {
     }
 }
 
-run().catch(console.dir);
 
-// Default route
+
+// Default route  
 app.get('/', (req, res) => {
     res.send('Hello World!');
 });
