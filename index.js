@@ -149,7 +149,7 @@ async function run() {
     }
 }
 
-
+run().catch(console.dir);
 
 // Default route  
 app.get('/', (req, res) => {
