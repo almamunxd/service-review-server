@@ -140,6 +140,26 @@ async function run() {
             }
         });
 
+        // Get service details by ID, including reviews
+        app.get('/services/:id', async (req, res) => {
+            const { id } = req.params;
+            try {
+                const service = await servicesCollection.findOne({ _id: new ObjectId(id) });
+                const reviews = await reviewsCollection.find({ serviceId: id }).toArray(); // Fetch reviews for the service
+                if (service) {
+                    res.send({
+                        success: true,
+                        data: { ...service, reviews },
+                    });
+                } else {
+                    res.status(404).send({ success: false, message: 'Service not found' });
+                }
+            } catch (error) {
+                res.status(500).send({ success: false, message: 'Failed to fetch service details', error });
+            }
+        });
+
+
 
 
 
