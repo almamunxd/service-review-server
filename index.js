@@ -129,8 +129,7 @@ async function run() {
             }
         });
 
-        // Add a review for a service
-        // Add a review for a service
+        
         // Add a review for a service
         app.post('/reviews', async (req, res) => {
             const { serviceId, userId, userName, userPhoto, reviewText, rating, postedDate } = req.body;
