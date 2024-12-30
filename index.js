@@ -31,7 +31,7 @@ async function run() {
         const servicesCollection = db.collection("services");
         const reviewsCollection = db.collection("reviews");
 
-        // Routes
+   
 
         // Get all services with pagination, search, and filter
         app.get('/services', async (req, res) => {
