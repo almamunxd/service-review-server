@@ -189,7 +189,7 @@ async function run() {
             }
 
             try {
-                // Fetch reviews directly from the reviews collection
+                 
                 const reviews = await reviewsCollection.find({ userId: email }).toArray();
 
                 res.send({ success: true, data: reviews });
